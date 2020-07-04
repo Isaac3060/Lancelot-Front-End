@@ -16,6 +16,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 			]
 		},
 		actions: {
+            actions: {
+			signup: async (email, password) => {
+				const response = await fetch(
+					"https://3000-c0f8905b-5e5c-4fc3-a510-7f2618865c6e.ws-us02.gitpod.io/registration",
+					{
+						method: "POST",
+						headers: {
+							"Content-Type": "application/json"
+						},
+						body: JSON.stringify({
+							email: email,
+							password: password
+						})
+					}
+				);
 			login: async (email, password) => {
 				const response = await fetch(
 					"https://3000-c0f8905b-5e5c-4fc3-a510-7f2618865c6e.ws-us02.gitpod.io/token",

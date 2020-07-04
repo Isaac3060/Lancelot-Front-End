@@ -25,6 +25,7 @@ export const Layout = () => {
 					<Navbar />
 					<Switch>
 						<Route path="/login" component={LoginView} />
+                        <Route path="/signup" component={SignupView} />
 						<Route exact path="/" component={Home} />
 						<Route path="/private" component={Private} />
 						<Route path="/demo" component={Demo} />
