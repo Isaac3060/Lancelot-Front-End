@@ -6,6 +6,7 @@ import { Home } from "./views/home";
 import { Loginview, LoginView } from "./views/login";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
+import { Private } from "./views/private";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -25,6 +26,7 @@ export const Layout = () => {
 					<Switch>
 						<Route path="/login" component={LoginView} />
 						<Route exact path="/" component={Home} />
+						<Route path="/private" component={Private} />
 						<Route path="/demo" component={Demo} />
 						<Route path="/single/:theid" component={Single} />
 						<Route render={() => <h1>Not found!</h1>} />

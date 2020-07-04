@@ -1,6 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			token: null,
 			demo: [
 				{
 					title: "FIRST",
@@ -15,6 +16,24 @@ const getState = ({ getStore, getActions, setStore }) => {
 			]
 		},
 		actions: {
+			login: async (email, password) => {
+				const response = await fetch(
+					"https://3000-c0f8905b-5e5c-4fc3-a510-7f2618865c6e.ws-us02.gitpod.io/token",
+					{
+						method: "POST",
+						headers: {
+							"Content-Type": "application/json"
+						},
+						body: JSON.stringify({
+							email: email,
+							password: password
+						})
+					}
+				);
+				const body = await response.json();
+				if (response.status == 200) setStore({ token: body.jwt });
+				else setStore({ token: null });
+			},
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
