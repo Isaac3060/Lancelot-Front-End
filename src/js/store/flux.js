@@ -18,7 +18,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		actions: {
 			signup: async (business_name, address, phone_number, email, password) => {
 				const response = await fetch(
-					"https://3000-c0f8905b-5e5c-4fc3-a510-7f2618865c6e.ws-us02.gitpod.io/signup",
+					"https://3000-f885a706-2244-4bc5-b7e3-2b7012ef368b.ws-us02.gitpod.io/business",
 					{
 						method: "POST",
 						headers: {

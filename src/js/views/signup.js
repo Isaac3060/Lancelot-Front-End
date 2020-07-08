@@ -33,7 +33,7 @@ export const SignupView = function() {
 				type="button"
 				value="send"
 				onClick={async () => {
-					let success = await actions.signup(email, password);
+					let success = await actions.signup(businessName, address, phoneNumber, email, password);
 					if (success) {
 						history.push("/private");
 					} else {
