@@ -16,8 +16,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			]
 		},
 		actions: {
-            actions: {
-			signup: async (email, password) => {
+			signup: async (business_name, address, phone_number, email, password) => {
 				const response = await fetch(
 					"https://3000-c0f8905b-5e5c-4fc3-a510-7f2618865c6e.ws-us02.gitpod.io/signup",
 					{
@@ -26,14 +25,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 							"Content-Type": "application/json"
 						},
 						body: JSON.stringify({
-                            business_name: business_name,
-                            address: address,
-                            phone_number: phone_number,
+							business_name: business_name,
+							address: address,
+							phone_number: phone_number,
 							email: email,
 							password: password
 						})
 					}
 				);
+				if (response.ok) {
+					return true;
+				} else {
+					return false;
+				}
+			},
 			login: async (email, password) => {
 				const response = await fetch(
 					"https://3000-c0f8905b-5e5c-4fc3-a510-7f2618865c6e.ws-us02.gitpod.io/token",
