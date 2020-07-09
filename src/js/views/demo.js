@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-
+import BarChart from "./../component/BarChart";
 import { Context } from "../store/appContext";
 
 import "../../styles/demo.scss";
@@ -38,6 +38,7 @@ export const Demo = () => {
 			<Link to="/">
 				<button className="btn btn-primary">Back home</button>
 			</Link>
+			<BarChart />
 		</div>
 	);
 };
