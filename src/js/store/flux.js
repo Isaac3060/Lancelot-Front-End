@@ -67,10 +67,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 				else setStore({ token: null });
             },
             getChartData: async () =>{
-                const data= await fetch 
+                const response= await fetch ("https://3000-f885a706-2244-4bc5-b7e3-2b7012ef368b.ws-us02.gitpod.io/render-bar-chart")
+
+                const data = await response.json();
+				if (response.status == 200) setStore({ data: data });
+				else setStore({ data: [] });
 
 
-            }
+            },
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
