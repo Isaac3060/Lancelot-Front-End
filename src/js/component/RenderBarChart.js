@@ -3,8 +3,8 @@ import { BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Bar, Responsive
 import { Context } from "../store/appContext";
 
 const RenderBarChart = () => {
-    const { store, actions } = useContext(Context);
-    useEffect
+	const { store, actions } = useContext(Context);
+	useEffect;
 	return (
 		<ResponsiveContainer width={"100%"} height={500}>
 			<BarChart data={store.data}>

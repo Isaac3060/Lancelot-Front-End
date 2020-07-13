@@ -75,6 +75,7 @@
 		"react": "^16.8.4",
 		"react-dom": "^16.8.4",
 		"react-polyfills": "0.0.1",
+		"react-recipes": "^1.0.2",
 		"react-router": "^5.2.0",
 		"react-router-dom": "^5.2.0",
 		"recharts": "^1.8.5"

@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
-
 import { Home } from "./views/home";
 import { LoginView } from "./views/login";
 import { Demo } from "./views/demo";
@@ -22,10 +21,14 @@ export const Layout = () => {
 		<div className="d-flex flex-column h-100">
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
-					<Navbar />
 					<Switch>
-						<Route exact path="/" component={Home} />
-						<Route path="/login" component={LoginView} />
+						<Route exact path="/">
+							<Home />
+						</Route>
+						<Route path="/login">
+							<Navbar />
+							<LoginView />
+						</Route>
 						<Route path="/signup" component={SignupView} />
 						<Route path="/private" component={Private} />
 						<Route path="/demo" component={Demo} />
