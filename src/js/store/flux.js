@@ -2,15 +2,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			token: null,
-			data: [
-				{ name: "0-19", positive: 10 },
-				{ name: "20-44", positive: 20 },
-				{ name: "45-54", positive: 30 },
-				{ name: "55-64", positive: 40 },
-				{ name: "65-74", positive: 50 },
-				{ name: "75-84", positive: 60 },
-				{ name: "85+", positive: 70 }
-			],
+			data: [],
 			demo: [
 				{
 					title: "FIRST",
