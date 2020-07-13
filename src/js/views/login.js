@@ -10,15 +10,15 @@ export const LoginView = function() {
 			{store.token ? <Redirect to="/private" /> : ""}
 			<div className="input-group">
 				<input
-					className="form-control"
+					className="form-control col-2"
 					type="text"
 					placeholder="enter your email"
 					onChange={event => setEmail(event.target.value)}
 				/>
 			</div>
-			<div className="input-group col-6">
+			<div className="input-group">
 				<input
-					className="form-control"
+					className="form-control col-2"
 					type="password"
 					placeholder="enter password"
 					onChange={event => setPassword(event.target.value)}

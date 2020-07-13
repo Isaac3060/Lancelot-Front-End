@@ -10,26 +10,50 @@ export const SignupView = function() {
 	const [address, setAddress] = useState("");
 	const history = useHistory();
 	return (
-		<div>
+		<>
 			{store.token ? <Redirect to="/private" /> : ""}
-			<input
-				type="text"
-				placeholder="enter business name"
-				onChange={event => setBusinessName(event.target.value)}
-			/>
-			<input
-				type="text"
-				placeholder="enter business address"
-				onChange={event => setAddress(event.target.value)}
-			/>
-			<input type="text" placeholder="enter business email" onChange={event => setEmail(event.target.value)} />
-			<input
-				type="text"
-				placeholder="enter phone number"
-				onChange={event => setPhoneNumber(event.target.value)}
-			/>
-			<input type="password" placeholder="enter password" onChange={event => setPassword(event.target.value)} />
-			<input
+
+			<div className="input-group">
+				<input
+					className="form-control col-2"
+					type="text"
+					placeholder="enter business name"
+					onChange={event => setBusinessName(event.target.value)}
+				/>
+			</div>
+			<div className="input-group">
+				<input
+					className="form-control col-2"
+					type="text"
+					placeholder="enter business address"
+					onChange={event => setAddress(event.target.value)}
+				/>
+			</div>
+			<div className="input-group">
+				<input
+					className="form-control col-2"
+					type="text"
+					placeholder="enter business email"
+					onChange={event => setEmail(event.target.value)}
+				/>
+			</div>
+			<div className="input-group">
+				<input
+					type="text"
+					placeholder="enter phone number"
+					onChange={event => setPhoneNumber(event.target.value)}
+				/>
+			</div>
+			<div className="input-group">
+				<input
+					className="form-control col-2"
+					type="password"
+					placeholder="enter password"
+					onChange={event => setPassword(event.target.value)}
+				/>
+			</div>
+			<button
+				className="btn btn-primary"
 				type="button"
 				value="send"
 				onClick={async () => {
@@ -41,6 +65,6 @@ export const SignupView = function() {
 					}
 				}}
 			/>
-		</div>
+		</>
 	);
 };
