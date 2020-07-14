@@ -38,9 +38,6 @@ export const Demo = () => {
 			<Link to="/">
 				<button className="btn btn-primary">Back home</button>
 			</Link>
-			<div className="col-6 mx-auto">
-				<RenderBarChart />
-			</div>
 		</div>
 	);
 };

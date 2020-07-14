@@ -6,6 +6,7 @@ import { LoginView } from "./views/login";
 import { Demo } from "./views/demo";
 import { Barchart } from "./views/barchart";
 import { Questions } from "./views/questions";
+import { NextQuestion } from "./views/nextquestion";
 import { Single } from "./views/single";
 import { Private } from "./views/private";
 import injectContext from "./store/appContext";
@@ -34,7 +35,8 @@ export const Layout = () => {
 						<Route path="/signup" component={SignupView} />
 						<Route path="/barchart" component={Barchart} />
 						<Route path="/private" component={Private} />
-						<Route path="/questions" component={Demo} />
+						<Route path="/questions" component={Questions} />
+						<Route path="/next-question" component={NextQuestion} />
 						<Route path="/demo" component={Demo} />
 						<Route path="/single/:theid" component={Single} />
 						<Route render={() => <h1>Not found!</h1>} />

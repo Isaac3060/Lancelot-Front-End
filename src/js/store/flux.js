@@ -79,6 +79,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 				if (response.status == 200) setStore({ data: data });
 				else setStore({ data: [] });
 			},
+			setAgeRange: ageRange => {
+				const currentStore = getStore();
+				setStore({
+					visitor: {
+						...currentStore.visitor,
+						ageRange: ageRange
+					}
+				});
+			},
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");

@@ -1,20 +1,25 @@
 import React, { useState, useContext } from "react";
 import { Context } from "../store/appContext.js";
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 
 export const Questions = function() {
+	const { store, actions } = useContext(Context);
+	const [ageRange, setAgeRange] = useState(null);
+	const history = useHistory();
 	return (
 		<>
-			{store.token ? <Redirect to="/private" /> : ""}
+			{!store.token ? <Redirect to="/login" /> : ""}
+
 			<div className="container">
+				<h1>What is your age?</h1>
 				<div className="custom-control custom-radio">
 					<input
+						onClick={e => setAgeRange(e.target.value)}
+						value="18-29"
 						type="radio"
-						id="radio1"
 						name="radioDisabled"
 						id="customRadioDisabled1"
 						className="custom-control-input"
-						disabled
 					/>
 					<label className="custom-control-label" htmlFor="customRadioDisabled1">
 						18-29
@@ -22,12 +27,12 @@ export const Questions = function() {
 				</div>
 				<div className="custom-control custom-radio">
 					<input
+						onClick={e => setAgeRange(e.target.value)}
+						value="30-39"
 						type="radio"
-						id="radio2"
 						name="radioDisabled"
 						id="customRadioDisabled2"
 						className="custom-control-input"
-						disabled
 					/>
 					<label className="custom-control-label" htmlFor="customRadioDisabled2">
 						30-39
@@ -35,12 +40,12 @@ export const Questions = function() {
 				</div>
 				<div className="custom-control custom-radio">
 					<input
+						onClick={e => setAgeRange(e.target.value)}
+						value="40-49"
 						type="radio"
-						id="radio3"
 						name="radioDisabled"
 						id="customRadioDisabled3"
 						className="custom-control-input"
-						disabled
 					/>
 					<label className="custom-control-label" htmlFor="customRadioDisabled3">
 						40-49
@@ -48,12 +53,12 @@ export const Questions = function() {
 				</div>
 				<div className="custom-control custom-radio">
 					<input
+						onClick={e => setAgeRange(e.target.value)}
+						value="50-59"
 						type="radio"
-						id="radio4"
 						name="radioDisabled"
 						id="customRadioDisabled4"
 						className="custom-control-input"
-						disabled
 					/>
 					<label className="custom-control-label" htmlFor="customRadioDisabled4">
 						50-59
@@ -61,12 +66,12 @@ export const Questions = function() {
 				</div>
 				<div className="custom-control custom-radio">
 					<input
+						onClick={e => setAgeRange(e.target.value)}
+						value="60-64"
 						type="radio"
-						id="radio5"
 						name="radioDisabled"
 						id="customRadioDisabled5"
 						className="custom-control-input"
-						disabled
 					/>
 					<label className="custom-control-label" htmlFor="customRadioDisabled5">
 						60-64
@@ -74,12 +79,12 @@ export const Questions = function() {
 				</div>
 				<div className="custom-control custom-radio">
 					<input
+						onClick={e => setAgeRange(e.target.value)}
+						value="65-69"
 						type="radio"
-						id="radio6"
 						name="radioDisabled"
 						id="customRadioDisabled6"
 						className="custom-control-input"
-						disabled
 					/>
 					<label className="custom-control-label" htmlFor="customRadioDisabled6">
 						65-69
@@ -87,12 +92,12 @@ export const Questions = function() {
 				</div>
 				<div className="custom-control custom-radio">
 					<input
+						onClick={e => setAgeRange(e.target.value)}
+						value="70-79"
 						type="radio"
-						id="radio7"
 						name="radioDisabled"
 						id="customRadioDisabled7"
 						className="custom-control-input"
-						disabled
 					/>
 					<label className="custom-control-label" htmlFor="customRadioDisabled7">
 						70-79
@@ -100,17 +105,25 @@ export const Questions = function() {
 				</div>
 				<div className="custom-control custom-radio">
 					<input
+						onClick={e => setAgeRange(e.target.value)}
+						value="80+"
 						type="radio"
-						id="radio8"
 						name="radioDisabled"
 						id="customRadioDisabled8"
 						className="custom-control-input"
-						disabled
 					/>
 					<label className="custom-control-label" htmlFor="customRadioDisabled8">
 						80+
 					</label>
 				</div>
+				<button
+					className="btn btn-primary"
+					onClick={e => {
+						actions.setAgeRange(ageRange);
+						history.push("/next-question");
+					}}>
+					Next
+				</button>
 			</div>
 		</>
 	);
