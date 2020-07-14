@@ -2,7 +2,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			token: null,
-			data: [],
+			data: [
+				{ name: "0-19", positive: 10 },
+				{ name: "20-44", positive: 20 },
+				{ name: "45-54", positive: 30 },
+				{ name: "55-64", positive: 40 },
+				{ name: "65-74", positive: 50 },
+				{ name: "75-84", positive: 60 },
+				{ name: "85+", positive: 70 }
+			],
 			demo: [
 				{
 					title: "FIRST",
@@ -41,8 +49,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 			login: async (email, password) => {
+				console.log(email, password);
 				const response = await fetch(
-					"https://3000-c0f8905b-5e5c-4fc3-a510-7f2618865c6e.ws-us02.gitpod.io/token",
+					"https://3000-f885a706-2244-4bc5-b7e3-2b7012ef368b.ws-us02.gitpod.io/token",
 					{
 						method: "POST",
 						headers: {
@@ -55,8 +64,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 					}
 				);
 				const body = await response.json();
-				if (response.status == 200) setStore({ token: body.jwt });
-				else setStore({ token: null });
+				console.log("body", body);
+				if (response.status == 200) {
+					console.log("test");
+					setStore({ token: body.jwt });
+				} else setStore({ token: null });
 			},
 			getChartData: async () => {
 				const response = await fetch(

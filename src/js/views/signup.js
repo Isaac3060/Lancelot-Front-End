@@ -24,10 +24,7 @@ export const SignupView = function() {
 								height="72"
 							/>
 							<h1 className="h3 mb-3 font-weight-normal">Please sign up</h1>
-							<label
-								htmlFor="businessName"
-								className="sr-only"
-								onChange={event => setBusinessName(event.target.value)}>
+							<label htmlFor="businessName" className="sr-only">
 								businessName
 							</label>
 
@@ -36,14 +33,12 @@ export const SignupView = function() {
 								id="inputBusinessName"
 								className="form-control"
 								placeholder="Business Name"
+								onChange={event => setBusinessName(event.target.value)}
 								required
 								autoFocus
 							/>
 
-							<label
-								htmlFor="inputAddress"
-								className="sr-only"
-								onChange={event => setAddress(event.target.value)}>
+							<label htmlFor="inputAddress" className="sr-only">
 								address
 							</label>
 
@@ -52,13 +47,11 @@ export const SignupView = function() {
 								id="inputAddress"
 								className="form-control"
 								placeholder="Business Address"
+								onChange={event => setAddress(event.target.value)}
 								required
 								autoFocus
 							/>
-							<label
-								htmlFor="inputPhoneNumber"
-								className="sr-only"
-								onChange={event => setPhoneNumber(event.target.value)}>
+							<label htmlFor="inputPhoneNumber" className="sr-only">
 								phoneNumber
 							</label>
 
@@ -67,14 +60,12 @@ export const SignupView = function() {
 								id="inputAddress"
 								className="form-control"
 								placeholder="Phone Number"
+								onChange={event => setPhoneNumber(event.target.value)}
 								required
 								autoFocus
 							/>
 
-							<label
-								htmlFor="inputEmail"
-								className="sr-only"
-								onChange={event => setEmail(event.target.value)}>
+							<label htmlFor="inputEmail" className="sr-only">
 								email
 							</label>
 
@@ -83,13 +74,11 @@ export const SignupView = function() {
 								id="inputEmail"
 								className="form-control"
 								placeholder="Business Email"
+								onChange={event => setEmail(event.target.value)}
 								required
 								autoFocus
 							/>
-							<label
-								htmlFor="inputPassword"
-								className="sr-only"
-								onChange={event => setPassword(event.target.value)}>
+							<label htmlFor="inputPassword" className="sr-only">
 								password
 							</label>
 							<input
@@ -97,6 +86,7 @@ export const SignupView = function() {
 								id="inputPassword"
 								className="form-control"
 								placeholder="Password"
+								onChange={event => setPassword(event.target.value)}
 								required
 							/>
 							<div className="checkbox mb-3">
@@ -106,7 +96,7 @@ export const SignupView = function() {
 							</div>
 							<button
 								className="btn btn-lg btn-primary btn-block"
-								type="submit"
+								type="button"
 								onClick={async () => {
 									let success = await actions.signup(
 										businessName,

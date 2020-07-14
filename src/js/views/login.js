@@ -7,7 +7,7 @@ export const LoginView = function() {
 	const [password, setPassword] = useState("");
 	return (
 		<>
-			{store.token ? <Redirect to="/private" /> : ""}
+			{store.token != null ? <Redirect to="/private" /> : ""}
 
 			<div className="container">
 				<div className="row justify-content-center">
@@ -21,10 +21,7 @@ export const LoginView = function() {
 								height="72"
 							/>
 							<h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
-							<label
-								htmlFor="inputEmail"
-								className="sr-only"
-								onChange={event => setEmail(event.target.value)}>
+							<label htmlFor="inputEmail" className="sr-only">
 								Email address
 							</label>
 
@@ -33,13 +30,11 @@ export const LoginView = function() {
 								id="inputEmail"
 								className="form-control"
 								placeholder="Email address"
+								onChange={event => setEmail(event.target.value)}
 								required
 								autoFocus
 							/>
-							<label
-								htmlFor="inputPassword"
-								className="sr-only"
-								onChange={event => setPassword(event.target.value)}>
+							<label htmlFor="inputPassword" className="sr-only">
 								Password
 							</label>
 							<input
@@ -47,6 +42,7 @@ export const LoginView = function() {
 								id="inputPassword"
 								className="form-control"
 								placeholder="Password"
+								onChange={event => setPassword(event.target.value)}
 								required
 							/>
 							<div className="checkbox mb-3">
@@ -56,7 +52,7 @@ export const LoginView = function() {
 							</div>
 							<button
 								className="btn btn-lg btn-primary btn-block"
-								type="submit"
+								type="button"
 								onClick={async () => actions.login(email, password)}>
 								Sign in
 							</button>
