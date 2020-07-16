@@ -13,7 +13,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			visit: {
+				temperature: ""
+			}
 		},
 		actions: {
 			signup: async (business_name, address, phone_number, email, password) => {
@@ -56,6 +59,22 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const body = await response.json();
 				if (response.status == 200) setStore({ token: body.jwt });
 				else setStore({ token: null });
+			},
+			getTemperature: async () => {
+				const store = getStore();
+				const response = await fetch(
+					`https://3000-c0f8905b-5e5c-4fc3-a510-7f2618865c6e.ws-us02.gitpod.io/temperature/${store.token}`
+				);
+				if (!response.ok) {
+					return response.statusText;
+				}
+				const temperature = await response.json();
+				setStore({
+					visit: {
+						...store.visit,
+						temperature: temperature
+					}
+				});
 			},
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
