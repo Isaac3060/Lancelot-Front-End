@@ -2,6 +2,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			token: null,
+			business_id: null,
+			visitors: [],
 			data: [
 				{ name: "18-29", positive: 10 },
 				{ name: "30-39", positive: 20 },
@@ -50,7 +52,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 			login: async (email, password) => {
-				console.log(email, password);
+				// console.log(email, password);
 				const response = await fetch(
 					"https://3000-f885a706-2244-4bc5-b7e3-2b7012ef368b.ws-us02.gitpod.io/token",
 					{
@@ -65,11 +67,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 					}
 				);
 				const body = await response.json();
-				console.log("body", body);
+				// console.log("body", body);
 				if (response.status == 200) {
-					console.log("test");
-					setStore({ token: body.jwt });
-				} else setStore({ token: null });
+					// console.log("test");
+					setStore({ token: body.jwt, businessId: body.business_id });
+				} else setStore({ token: null, businessId: null });
 			},
 			getChartData: async () => {
 				const response = await fetch(
@@ -88,6 +90,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 						ageRange: ageRange
 					}
 				});
+			},
+			checkVisitor: async email => {
+				const response = await fetch(
+					"https://3000-f885a706-2244-4bc5-b7e3-2b7012ef368b.ws-us02.gitpod.io/visitor"
+				);
+
+				const data = await response.json();
+				if (response.status == 200) setStore({ visitors: data });
+				else setStore({ visitors: [] });
 			},
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {

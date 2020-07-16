@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../store/appContext.js";
 import { Redirect, useHistory } from "react-router-dom";
 
@@ -6,7 +6,39 @@ export const Questions = function() {
 	const { store, actions } = useContext(Context);
 	const [ageRange, setAgeRange] = useState(null);
 	const history = useHistory();
-	const [exist, setExist] = useState(true);
+	const [exist, setExist] = useState(false);
+	const [check, setCheck] = useState();
+	const [email, setEmail] = useState("");
+	useEffect(
+		() => {
+			const checkVisitor = async email => {
+				let visitorArray = await store.visitors;
+				let filteredVisitor = await visitorArray.filter(item => item.email === email);
+				// let filteredVisit = await filteredVisitor.visit.filter(visit => visit.business_id === store.businessId);
+				// console.log(filteredVisit);
+				setCheck(filteredVisitor);
+			};
+			checkVisitor(email);
+		},
+		[store.visitors]
+	);
+	// useEffect(
+	// 	() => {
+	// 		const checkVisit = async () => {
+	// 			// let visitArray = await store.check;
+	// 			let filteredVisitor = await check.visit.filter(item => item.business_id === store.businessId);
+	// 			// let filteredVisit = await filteredVisitor.visit.filter(visit => visit.business_id === store.businessId);
+	// 			// console.log(filteredVisit);
+	// 			if (filteredVisitor) {
+	// 				setExist(true);
+	// 			} else {
+	// 				setExist(false);
+	// 			}
+	// 		};
+	// 		checkVisit();
+	// 	},
+	// 	[check]
+	// );
 	return (
 		<>
 			{!store.token ? <Redirect to="/login" /> : ""}
@@ -142,6 +174,12 @@ export const Questions = function() {
 						required
 						autoFocus
 					/>
+					<button
+						className="btn btn-lg btn-primary btn-block"
+						type="button"
+						onClick={async () => actions.checkVisitor(email)}>
+						Sign in
+					</button>
 				</>
 			)}{" "}
 		</>
