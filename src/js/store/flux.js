@@ -1,3 +1,4 @@
+const lancelotBackendUrl = "https://3000-dfa082e9-3e28-46d8-b397-ea1dcc78a8d9.ws-us02.gitpod.io";
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
@@ -25,26 +26,26 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			visit: {
+				temperature: ""
+			}
 		},
 		actions: {
 			signup: async (business_name, address, phone_number, email, password) => {
-				const response = await fetch(
-					"https://3000-f885a706-2244-4bc5-b7e3-2b7012ef368b.ws-us02.gitpod.io/business",
-					{
-						method: "POST",
-						headers: {
-							"Content-Type": "application/json"
-						},
-						body: JSON.stringify({
-							business_name: business_name,
-							address: address,
-							phone_number: phone_number,
-							email: email,
-							password: password
-						})
-					}
-				);
+				const response = await fetch(`${lancelotBackendUrl}/business`, {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify({
+						business_name: business_name,
+						address: address,
+						phone_number: phone_number,
+						email: email,
+						password: password
+					})
+				});
 				if (response.ok) {
 					return true;
 				} else {
@@ -52,20 +53,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 			login: async (email, password) => {
-				// console.log(email, password);
-				const response = await fetch(
-					"https://3000-f885a706-2244-4bc5-b7e3-2b7012ef368b.ws-us02.gitpod.io/token",
-					{
-						method: "POST",
-						headers: {
-							"Content-Type": "application/json"
-						},
-						body: JSON.stringify({
-							email: email,
-							password: password
-						})
-					}
-				);
+				const response = await fetch(`${lancelotBackendUrl}/token`, {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify({
+						email: email,
+						password: password
+					})
+				});
 				const body = await response.json();
 				// console.log("body", body);
 				if (response.status == 200) {
@@ -100,6 +97,25 @@ const getState = ({ getStore, getActions, setStore }) => {
 				if (response.status == 200) setStore({ visitors: data });
 				else setStore({ visitors: [] });
 			},
+			getTemperature: async () => {
+				const store = getStore();
+				const response = await fetch(`${lancelotBackendUrl}/temperature`, {
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: `Bearer ${store.token}`
+					}
+				});
+				if (!response.ok) {
+					return response.statusText;
+				}
+				const body = await response.json();
+				setStore({
+					visit: {
+						...store.visit,
+						temperature: body.temperature
+					}
+				});
+			},
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
@@ -112,19 +128,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();
-
 				//we have to loop the entire demo array to look for the respective index
 				//and change its color
 				const demo = store.demo.map((elm, i) => {
 					if (i === index) elm.background = color;
 					return elm;
 				});
-
 				//reset the global store
 				setStore({ demo: demo });
 			}
 		}
 	};
 };
-
 export default getState;

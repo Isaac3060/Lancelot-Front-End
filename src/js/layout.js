@@ -13,6 +13,7 @@ import injectContext from "./store/appContext";
 import { SignupView } from "./views/signup";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import { TestView } from "./views/test";
 
 //create your first component
 export const Layout = () => {
@@ -39,6 +40,7 @@ export const Layout = () => {
 						<Route path="/next-question" component={NextQuestion} />
 						<Route path="/demo" component={Demo} />
 						<Route path="/single/:theid" component={Single} />
+						<Route path="/test" component={TestView} />
 						<Route render={() => <h1>Not found!</h1>} />
 					</Switch>
 					<Footer />

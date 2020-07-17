@@ -2,8 +2,7 @@ import React, { useContext } from "react";
 import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.scss";
 import { Context } from "../store/appContext.js";
-import { Redirect } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import lancelot from "../../img/Lancelot.png";
 import smiley from "../../img/Smiley face.png";
 
@@ -25,6 +24,9 @@ export const Private = () => {
 			</Link>
 			<Link to="/questions" className="btn btn-success">
 				Questions
+            </Link>
+			<Link to="/test" className="btn btn-success">
+				{"test"}
 			</Link>
 		</div>
 	);
