@@ -2,8 +2,7 @@ import React, { useContext } from "react";
 import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.scss";
 import { Context } from "../store/appContext.js";
-import { Redirect } from "react-router-dom";
-
+import { Redirect, Link } from "react-router-dom";
 export const Private = () => {
 	const { actions, store } = useContext(Context);
 	return (
@@ -14,9 +13,9 @@ export const Private = () => {
 			<p>
 				<img src={rigoImage} />
 			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button, bootstrap is working
-			</a>
+			<Link to="/test" className="btn btn-success">
+				{"test"}
+			</Link>
 		</div>
 	);
 };

@@ -6,7 +6,7 @@ export const TestView = function() {
 	const [loading, setLoading] = useState(false);
 	return (
 		<div>
-			{store.token ? <Redirect to="/login" /> : ""}
+			{!store.token ? <Redirect to="/login" /> : ""}
 			{!loading ? (
 				<>
 					{store.visit.temperature && store.visit.temperature != "" ? (
