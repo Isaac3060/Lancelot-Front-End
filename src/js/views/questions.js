@@ -4,11 +4,13 @@ import { StepEmail } from "../component/stepEmail.js";
 import { StepAge } from "../component/stepAge.js";
 import { StepBasicInfo } from "../component/stepBasicInfo.js";
 import { Redirect, useHistory, useParams } from "react-router-dom";
+import { TestView } from "./test.js";
 
 const steps = {
 	0: StepEmail,
-	1: StepAge,
-	2: StepBasicInfo
+	3: StepAge,
+	2: StepBasicInfo,
+	1: TestView
 };
 
 export const Questions = function() {

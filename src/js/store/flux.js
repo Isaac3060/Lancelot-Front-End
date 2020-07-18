@@ -1,4 +1,4 @@
-const lancelotBackendUrl = "https://3000-f885a706-2244-4bc5-b7e3-2b7012ef368b.ws-us02.gitpod.io";
+const lancelotBackendUrl = "https://3000-bb777f36-b24e-4ae5-b75f-adda37373349.ws-us02.gitpod.io/";
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
@@ -71,10 +71,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				} else setStore({ token: null, businessId: null });
 			},
 			getChartData: async () => {
-				const response = await fetch(
-					"https://3000-f885a706-2244-4bc5-b7e3-2b7012ef368b.ws-us02.gitpod.io/render-bar-chart"
-				);
-
+				const response = await fetch(`${lancelotBackendUrl}/render-bar-chart`);
 				const data = await response.json();
 				if (response.status == 200) setStore({ data: data });
 				else setStore({ data: [] });
@@ -89,10 +86,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				});
 			},
 			checkVisitor: async email => {
-				const response = await fetch(
-					"https://3000-f885a706-2244-4bc5-b7e3-2b7012ef368b.ws-us02.gitpod.io/visitor"
-				);
-
+				const response = await fetch(`${lancelotBackendUrl}/visitor`);
 				const data = await response.json();
 				if (response.status == 200) setStore({ visitors: data });
 				else setStore({ visitors: [] });
@@ -109,12 +103,19 @@ const getState = ({ getStore, getActions, setStore }) => {
 					return response.statusText;
 				}
 				const body = await response.json();
-				setStore({
-					visit: {
-						...store.visit,
-						temperature: body.temperature
-					}
-				});
+				const delay = ms =>
+					new Promise(() =>
+						setTimeout(() => {
+							setStore({
+								visit: {
+									...store.visit,
+									temperature: body.temperature
+								}
+							});
+						}, ms)
+					);
+				await delay(5000);
+				return true;
 			},
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
