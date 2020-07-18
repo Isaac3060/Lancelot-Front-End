@@ -6,7 +6,9 @@ import { LoginView } from "./views/login";
 import { Demo } from "./views/demo";
 import { Barchart } from "./views/barchart";
 import { Questions } from "./views/questions";
-import { NextQuestion } from "./views/nextquestion";
+import { StepEmail } from "./component/stepEmail";
+import { StepAge } from "./component/stepAge";
+import { StepBasicInfo } from "./component/stepBasicInfo";
 import { Single } from "./views/single";
 import { Private } from "./views/private";
 import injectContext from "./store/appContext";
@@ -33,14 +35,14 @@ export const Layout = () => {
 							<Navbar />
 							<LoginView />
 						</Route>
-						<Route path="/signup" component={SignupView} />
-						<Route path="/barchart" component={Barchart} />
-						<Route path="/private" component={Private} />
-						<Route path="/questions" component={Questions} />
-						<Route path="/next-question" component={NextQuestion} />
-						<Route path="/demo" component={Demo} />
-						<Route path="/single/:theid" component={Single} />
-						<Route path="/test" component={TestView} />
+						<Route exact path="/signup" component={SignupView} />
+						<Route exact path="/barchart" component={Barchart} />
+						<Route exact path="/private" component={Private} />
+						<Route exact path="/questions" component={Questions} />
+						<Route exact path="/questions/:currentstep" component={Questions} />
+						<Route exact path="/demo" component={Demo} />
+						<Route exact path="/single/:theid" component={Single} />
+						<Route exact path="/test" component={TestView} />
 						<Route render={() => <h1>Not found!</h1>} />
 					</Switch>
 					<Footer />

@@ -13,19 +13,22 @@ export const Private = () => {
 			{!store.token ? <Redirect to="/login" /> : ""}
 			<h2>Welcome back!</h2>
 			<p>
-				<img src={smiley} />
+				<img
+					src={smiley}
+					style={{
+						width: "300px",
+						height: "300px"
+					}}
+				/>
 			</p>
 
-			{/* <p>
-				<img src={lancelot} />
-			</p> */}
-			<Link to="/barchart" className="btn btn-success">
+			<Link to="/barchart" className="btn btn-primary">
 				Barchart
 			</Link>
-			<Link to="/questions" className="btn btn-success">
+			<Link to="/questions" className="btn btn-primary">
 				Questions
-            </Link>
-			<Link to="/test" className="btn btn-success">
+			</Link>
+			<Link to="/test" className="btn btn-primary">
 				{"test"}
 			</Link>
 		</div>
