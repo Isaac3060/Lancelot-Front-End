@@ -12,7 +12,7 @@ export const LoginView = function() {
 			<div className="container">
 				<div className="row justify-content-center">
 					<div className="col-4">
-						<form className="form-signin">
+						<form className="form-signin ">
 							<img
 								className="mb-4"
 								src="/docs/4.5/assets/brand/bootstrap-solid.svg"

@@ -11,12 +11,14 @@ export const Home = () => (
 		<p>
 			<img src={lancelot} />
 		</p>
-		<Link to="/login">
-			<button className="btn btn-primary">login</button>
-		</Link>
-		<Link to="/signup">
-			<button className="btn btn-primary">signup</button>
-		</Link>
+		<div className="btn-group-vertical mx-auto justify-content-center">
+			<Link to="/login">
+				<button className="btn btn-primary">login</button>
+			</Link>
+			<Link to="/signup">
+				<button className="btn btn-primary">signup</button>
+			</Link>
+		</div>
 	</div>
 );
 // this is for toggle between light and darkmode

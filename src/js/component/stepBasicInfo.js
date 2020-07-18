@@ -38,11 +38,11 @@ export const StepBasicInfo = () => {
 									phoneNumber,
 									email
 								);
-								// if (success) {
-								// 	history.push("/private");
-								// } else {
-								// 	alert("something went wrong, please try again");
-								// }
+								if (success) {
+									history.push("/questions/1");
+								} else {
+									alert("something went wrong, please try again");
+								}
 							}}>
 							Next
 						</button>

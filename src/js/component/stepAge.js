@@ -114,7 +114,7 @@ export const StepAge = function() {
 						80+
 					</label>
 				</div>
-				<button onClick={() => history.push("/questions/2")} type="button" className="btn btn-primary">
+				<button onClick={() => history.push("/questions/3")} type="button" className="btn btn-primary">
 					Next
 				</button>
 			</div>

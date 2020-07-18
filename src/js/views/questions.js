@@ -8,9 +8,9 @@ import { TestView } from "./test.js";
 
 const steps = {
 	0: StepEmail,
-	3: StepAge,
-	2: StepBasicInfo,
-	1: TestView
+	1: StepBasicInfo,
+	2: StepAge,
+	3: TestView
 };
 
 export const Questions = function() {
