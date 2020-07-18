@@ -5,19 +5,21 @@ import { Redirect, useHistory, useParams } from "react-router-dom";
 export const StepEmail = () => {
 	const history = useHistory();
 	return (
-		<div className="container">
-			<div className="row justify-content-center">
-				<div className="col-4" />
-				<form>
-					<div className="form-group">
-						<label htmlFor="inputEmail">Email Address</label>
-						<input type="name" className="form-control" id="inputEmail" placeholder />
-					</div>
-					<button onClick={() => history.push("/questions/1")} type="button" className="btn btn-primary">
-						Next
-					</button>
-				</form>
+		<>
+			<div className="container">
+				<div className="col d-flex justify-content-center">
+					<div className="col-1" />
+					<form className="justify-content-center">
+						<div className="form-group">
+							<label htmlFor="inputEmail">Email Address</label>
+							<input type="name" className="form-control" id="inputEmail" placeholder />
+						</div>
+						<button onClick={() => history.push("/questions/1")} type="button" className="btn btn-primary">
+							Next
+						</button>
+					</form>
+				</div>
 			</div>
-		</div>
+		</>
 	);
 };

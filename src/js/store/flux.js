@@ -1,10 +1,11 @@
-const lancelotBackendUrl = "https://3000-bb777f36-b24e-4ae5-b75f-adda37373349.ws-us02.gitpod.io/";
+const lancelotBackendUrl = "https://3000-f885a706-2244-4bc5-b7e3-2b7012ef368b.ws-us02.gitpod.io";
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			token: null,
 			business_id: null,
 			visitors: [],
+			visitor: [],
 			data: [
 				{ name: "18-29", positive: 10 },
 				{ name: "30-39", positive: 20 },
@@ -70,6 +71,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					setStore({ token: body.jwt, businessId: body.business_id });
 				} else setStore({ token: null, businessId: null });
 			},
+
 			getChartData: async () => {
 				const response = await fetch(`${lancelotBackendUrl}/render-bar-chart`);
 				const data = await response.json();
@@ -116,6 +118,27 @@ const getState = ({ getStore, getActions, setStore }) => {
 					);
 				await delay(5000);
 				return true;
+			},
+			visitor: async (first_name, last_name, age, address, phone_number, email) => {
+				const response = await fetch(`${lancelotBackendUrl}/visitor`, {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify({
+						first_name: first_name,
+						last_name: last_name,
+						age: age,
+						address: address,
+						phone_number: phone_number,
+						email: email
+					})
+				});
+				if (response.ok) {
+					return true;
+				} else {
+					return false;
+				}
 			},
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
