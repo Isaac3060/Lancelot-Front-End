@@ -32,7 +32,7 @@ export const TestView = function() {
 											type="button"
 											value="Back"
 											onClick={async () => {
-												history.push("/questions/2");
+												history.push("/questions/4");
 											}}
 										/>
 									</div>
