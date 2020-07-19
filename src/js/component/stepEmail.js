@@ -14,7 +14,7 @@ export const StepEmail = () => {
 							<label htmlFor="inputEmail">Email Address</label>
 							<input type="name" className="form-control" id="inputEmail" placeholder />
 						</div>
-						<button onClick={() => history.push("/questions/2")} type="button" className="btn btn-primary">
+						<button onClick={() => history.push("/questions/1")} type="button" className="btn btn-primary">
 							Next
 						</button>
 					</form>

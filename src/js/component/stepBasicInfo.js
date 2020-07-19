@@ -39,7 +39,7 @@ export const StepBasicInfo = () => {
 									email
 								);
 								if (success) {
-									history.push("/questions/1");
+									history.push("/questions/2");
 								} else {
 									alert("something went wrong, please try again");
 								}

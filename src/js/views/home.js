@@ -1,6 +1,6 @@
 import React from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
 import lancelot from "../../img/Lancelot.png";
+import newshield from "../../img/newshield.png";
 import "../../styles/home.scss";
 import { Link } from "react-router-dom";
 
@@ -9,7 +9,12 @@ import { Link } from "react-router-dom";
 export const Home = () => (
 	<div className="text-center mt-5">
 		<p>
-			<img src={lancelot} />
+			<img
+				src={newshield}
+				style={{
+					width: "400px"
+				}}
+			/>
 		</p>
 		<div className="btn-group-vertical mx-auto justify-content-center">
 			<Link to="/login">
