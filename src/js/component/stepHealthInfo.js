@@ -59,20 +59,13 @@ export const StepHealthInfo = () => {
 				</div>
 			</div>
 			<div className="botones  mx-auto justify-content-around">
-				<input
-					className="btn btn-primary btn-lg my-4"
-					type="button"
-					value="Yes"
-					// onClick={async () => {
-					// history.push("/questions/4");
-				/>
-				<input
-					className="btn btn-primary btn-lg my-4"
-					type="button"
-					value="No"
-					// onClick={async () => {
-					// history.push("/questions/4");
-				/>
+				<button onClick={() => history.push("/questions/5")} type="button" className="btn btn-primary">
+					Yes
+				</button>
+
+				<button onClick={() => history.push("/questions/6")} type="button" className="btn btn-primary">
+					No
+				</button>
 			</div>
 		</>
 	);

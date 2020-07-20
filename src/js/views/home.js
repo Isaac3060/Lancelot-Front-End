@@ -12,7 +12,7 @@ export const Home = () => (
 			<img
 				src={newshield}
 				style={{
-					width: "400px"
+					width: "300px"
 				}}
 			/>
 		</p>

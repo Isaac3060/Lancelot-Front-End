@@ -9,6 +9,8 @@ import { Questions } from "./views/questions";
 import { StepEmail } from "./component/stepEmail";
 import { StepAge } from "./component/stepAge";
 import { StepBasicInfo } from "./component/stepBasicInfo";
+import { StepHealthInfo } from "./component/stepHealthInfo";
+import { StepAttention } from "./component/stepAttention";
 import { Single } from "./views/single";
 import { Private } from "./views/private";
 import injectContext from "./store/appContext";
