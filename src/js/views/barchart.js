@@ -15,7 +15,7 @@ export const Barchart = () => {
 						<button className="boton-back-statistics btn btn-primary ">Back</button>
 					</Link>
 					<Link to="/">
-						<button className="boton-home-statistics btn btn-primary ml-2 ">Home</button>
+						<button className="boton-home-statistics btn btn-primary ml-2 ">Sign out</button>
 					</Link>
 				</div>
 			</div>

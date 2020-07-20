@@ -5,24 +5,6 @@ import "../../styles/home.scss";
 import { Link } from "react-router-dom";
 // import { useDarkMode } from "react-recipes";
 export const Home = () => (
-<<<<<<< HEAD
-	<div className="text-center mt-5">
-		<p>
-			<img
-				src={newshield}
-				style={{
-					width: "300px"
-				}}
-			/>
-		</p>
-		<div className="btn-group-vertical mx-auto justify-content-center">
-			<Link to="/login">
-				<button className="btn btn-primary">login</button>
-			</Link>
-			<Link to="/signup">
-				<button className="btn btn-primary">signup</button>
-			</Link>
-=======
 	<>
 		<div className="text-center mt-5">
 			<p>
@@ -33,7 +15,6 @@ export const Home = () => (
 					}}
 				/>
 			</p>
->>>>>>> 2798521ed177332cb50e036326126fcc5dea1d8f
 		</div>
 		<div className="container">
 			<div className="row justify-content-center">

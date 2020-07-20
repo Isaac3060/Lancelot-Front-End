@@ -12,11 +12,7 @@ export const SignupView = function() {
 	return (
 		<>
 			{store.token ? <Redirect to="/private" /> : ""}
-<<<<<<< HEAD
-			<div className="signup container">
-=======
 			<div className="container d-flex flex-column h-100 justify-content-center">
->>>>>>> 2798521ed177332cb50e036326126fcc5dea1d8f
 				<div className="row justify-content-center">
 					<div className="col-4">
 						<form className="form-signup">
