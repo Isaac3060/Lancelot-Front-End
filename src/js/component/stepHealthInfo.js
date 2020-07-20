@@ -6,7 +6,7 @@ export const StepHealthInfo = () => {
 	const history = useHistory();
 	return (
 		<>
-			<div className=" salud container">
+			<div className=" d-flex flex-column h-100 justify-content-center salud container">
 				<div className="VmqK7" jsname="D1hwXd">
 					<div jsname="UKZ16d" className="QwaZpd">
 						<div jscontroller="ijhCJc" jsname="UCjWBd">
@@ -60,14 +60,14 @@ export const StepHealthInfo = () => {
 			</div>
 			<div className="botones  mx-auto justify-content-around">
 				<input
-					className="btn btn-primary btn-lg my-4"
+					className="boton-yes btn btn-primary btn-lg my-4"
 					type="button"
 					value="Yes"
 					// onClick={async () => {
 					// history.push("/questions/4");
 				/>
 				<input
-					className="btn btn-primary btn-lg my-4"
+					className="boton-no btn btn-primary btn-lg my-4"
 					type="button"
 					value="No"
 					// onClick={async () => {

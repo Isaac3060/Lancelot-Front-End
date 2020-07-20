@@ -20,7 +20,7 @@ export const LoginView = function() {
 								width="72"
 								height="72"
 							/>
-							<h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
+							<h1 className="h3 mb-3 font-weight-normal">Please log in</h1>
 							<label htmlFor="inputEmail" className="sr-only">
 								Email address
 							</label>
@@ -28,7 +28,7 @@ export const LoginView = function() {
 							<input
 								type="email"
 								id="inputEmail"
-								className="form-control"
+								className="form-control mb-2"
 								placeholder="Email address"
 								onChange={event => setEmail(event.target.value)}
 								required
@@ -40,7 +40,7 @@ export const LoginView = function() {
 							<input
 								type="password"
 								id="inputPassword"
-								className="form-control"
+								className="form-control mb-2"
 								placeholder="Password"
 								onChange={event => setPassword(event.target.value)}
 								required

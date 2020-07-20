@@ -22,14 +22,14 @@ export const Private = () => {
 				/>
 			</p>
 
-			<Link to="/barchart" className="btn btn-primary">
-				Barchart
+			<Link to="/barchart" className="boton-statistics btn btn-primary btn-lg">
+				Statistics
 			</Link>
-			<Link to="/questions" className="btn btn-primary">
+			<Link to="/questions" className="boton-questions btn btn-primary btn-lg mx-3">
 				Questions
 			</Link>
-			<Link to="/test" className="btn btn-primary">
-				{"test"}
+			<Link to="/test" className="boton-test btn btn-primary btn-lg">
+				Test
 			</Link>
 		</div>
 	);

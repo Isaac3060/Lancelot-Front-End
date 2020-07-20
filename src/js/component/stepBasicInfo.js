@@ -12,7 +12,7 @@ export const StepBasicInfo = () => {
 	const [email, setEmail] = useState("");
 	const history = useHistory();
 	return (
-		<div className="container">
+		<div className="container d-flex flex-column h-100 justify-content-center">
 			<div className="row justify-content-center">
 				<div className="col-4">
 					<form>

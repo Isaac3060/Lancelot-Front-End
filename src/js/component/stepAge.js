@@ -8,7 +8,7 @@ export const StepAge = function() {
 
 	return (
 		<>
-			<div className="container">
+			<div className="container d-flex flex-column h-100 justify-content-center">
 				<h3>What is your age?</h3>
 				<div className="custom-control custom-radio">
 					<input
