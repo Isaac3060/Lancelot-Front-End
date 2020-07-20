@@ -12,7 +12,11 @@ export const SignupView = function() {
 	return (
 		<>
 			{store.token ? <Redirect to="/private" /> : ""}
+<<<<<<< HEAD
 			<div className="signup container">
+=======
+			<div className="container d-flex flex-column h-100 justify-content-center">
+>>>>>>> 2798521ed177332cb50e036326126fcc5dea1d8f
 				<div className="row justify-content-center">
 					<div className="col-4">
 						<form className="form-signup">
@@ -31,7 +35,7 @@ export const SignupView = function() {
 							<input
 								type="name"
 								id="inputBusinessName"
-								className="form-control"
+								className="form-control mb-2 "
 								placeholder="Business Name"
 								onChange={event => setBusinessName(event.target.value)}
 								required
@@ -45,7 +49,7 @@ export const SignupView = function() {
 							<input
 								type="address"
 								id="inputAddress"
-								className="form-control"
+								className="form-control  mb-2"
 								placeholder="Business Address"
 								onChange={event => setAddress(event.target.value)}
 								required
@@ -58,7 +62,7 @@ export const SignupView = function() {
 							<input
 								type="phone number"
 								id="inputAddress"
-								className="form-control"
+								className="form-control  mb-2"
 								placeholder="Phone Number"
 								onChange={event => setPhoneNumber(event.target.value)}
 								required
@@ -72,7 +76,7 @@ export const SignupView = function() {
 							<input
 								type="email"
 								id="inputEmail"
-								className="form-control"
+								className="form-control mb-2"
 								placeholder="Business Email"
 								onChange={event => setEmail(event.target.value)}
 								required
@@ -84,7 +88,7 @@ export const SignupView = function() {
 							<input
 								type="password"
 								id="inputPassword"
-								className="form-control"
+								className="form-control mb-2"
 								placeholder="Password"
 								onChange={event => setPassword(event.target.value)}
 								required

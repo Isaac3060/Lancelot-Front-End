@@ -9,9 +9,16 @@ export const Barchart = () => {
 	const { store, actions } = useContext(Context);
 	return (
 		<div>
-			<Link to="/">
-				<button className="btn btn-primary">Back home</button>
-			</Link>
+			<div className="navbar navbar-light bg-light mb-3">
+				<div className="d-flex justify-content-end">
+					<Link to="/private">
+						<button className="boton-back-statistics btn btn-primary ">Back</button>
+					</Link>
+					<Link to="/">
+						<button className="boton-home-statistics btn btn-primary ml-2 ">Home</button>
+					</Link>
+				</div>
+			</div>
 			<div className="col-6 mx-auto">
 				<RenderBarChart />
 			</div>

@@ -6,7 +6,7 @@ export const StepEmail = () => {
 	const history = useHistory();
 	return (
 		<>
-			<div className="container">
+			<div className="container d-flex flex-column h-100 justify-content-center">
 				<div className="col d-flex justify-content-center">
 					<div className="col-1" />
 					<form className="justify-content-center">
