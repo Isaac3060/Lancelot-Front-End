@@ -90,9 +90,13 @@ width: 120px;
 }
 .boton-begin-test{
     width:200px;
+    justify-content: center;
+    
 }
 .boton-sign-out{
     width: 200px;
+    justify-content: center;
+    margin-top: 10px;
 }
 .boton-begin{
     width:200px;
@@ -101,8 +105,7 @@ width: 120px;
     width: 200px;
 }
 .boton-email{
-    width:200;
-    margin: auto;
+    justify-content: center;
 }
 
 .sad-smiley{
@@ -113,4 +116,12 @@ background-image: url("../img/SadSmiley.png");
 background-size: contain;
 background-position: center;
 background-repeat: no-repeat;  
+}
+.lista
+{
+    padding: 1rem 25%;
+}
+.lista2
+{
+    padding: 1rem 30%;
 }

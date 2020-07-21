@@ -22,6 +22,8 @@ export const StepEmail = () => {
 							/>
 						</form>
 					</div>
+				</div>
+				<div>
 					<button
 						onClick={() => {
 							actions

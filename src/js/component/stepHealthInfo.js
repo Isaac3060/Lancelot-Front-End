@@ -6,9 +6,10 @@ export const StepHealthInfo = () => {
 	const history = useHistory();
 	return (
 		<>
-			<div className=" d-flex flex-column h-100 justify-content-center container">
-				<div>
+			<div className=" container d-flex flex-column h-100 justify-content-center ">
+				<div className=" sypmtopms d-flex flex-column justify-content-center">
 					<img
+						className="mx-auto"
 						src="https://www.gstatic.com/images/icons/material/system_gm/2x/report_problem_covid_red_48dp.png"
 						alt="report problem"
 						style={{
@@ -17,11 +18,11 @@ export const StepHealthInfo = () => {
 						}}
 						data-iml="79073346.79"
 					/>
-					<h3>Do you have any of these life-threatening symptoms?</h3>
+					<h3 className="text-center">Do you have any of these life-threatening symptoms?</h3>
 				</div>
 
-				<div className="lista">
-					<ul>
+				<div>
+					<ul className="lista">
 						<li>Bluish lips or face</li>
 						<li>Severe and constant pain or pressure in the chest</li>
 						<li>
