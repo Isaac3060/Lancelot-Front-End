@@ -8,6 +8,7 @@ import { Redirect, useHistory, useParams } from "react-router-dom";
 import { TestView } from "./test.js";
 import { StepHealthInfo } from "../component/stepHealthInfo.js";
 import { StepFever } from "../component/stepFever.js";
+import { StepNoFever } from "../component/stepNoFever.js";
 
 const steps = {
 	0: StepEmail,
@@ -16,7 +17,8 @@ const steps = {
 	3: TestView,
 	4: StepHealthInfo,
 	5: StepAttention,
-	6: StepFever
+	6: StepFever,
+	7: StepNoFever
 };
 
 export const Questions = function() {

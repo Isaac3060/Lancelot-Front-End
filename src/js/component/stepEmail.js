@@ -8,11 +8,10 @@ export const StepEmail = () => {
 	const [email, setEmail] = useState("");
 	return (
 		<>
-			<div className="container d-flex flex-column h-100 justify-content-center">
-				<div className="col d-flex justify-content-center">
-					<div className="col-1" />
-					<form className="justify-content-center">
-						<div className="form-group">
+			<div className="container">
+				<div className="row d-flex justify-content-center">
+					<div className="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
+						<form className="justify-content-center">
 							<label htmlFor="inputEmail">Email Address</label>
 							<input
 								onChange={event => setEmail(event.target.value)}
@@ -21,18 +20,18 @@ export const StepEmail = () => {
 								id="inputEmail"
 								placeholder
 							/>
-						</div>
-						<button
-							onClick={() => {
-								actions
-									.getSingleVisitor(email)
-									.then(data => (data ? history.push("/questions/3") : history.push("/questions/1")));
-							}}
-							type="button"
-							className="btn btn-primary">
-							Next
-						</button>
-					</form>
+						</form>
+					</div>
+					<button
+						onClick={() => {
+							actions
+								.getSingleVisitor(email)
+								.then(data => (data ? history.push("/questions/3") : history.push("/questions/1")));
+						}}
+						type="button"
+						className="boton-email btn btn-primary">
+						Next
+					</button>
 				</div>
 			</div>
 		</>
