@@ -42,12 +42,12 @@ export const StepAttention = () => {
 				<div className="row flex-column justify-content-between ">
 					<div className="d-flex justify-content-center">
 						<Link to="/questions/0">
-							<button className="btn btn-primary ">Begin new test</button>
+							<button className="boton-begin-test btn btn-primary ">Begin new test</button>
 						</Link>
 					</div>
 					<div className="d-flex justify-content-center mt-3">
 						<Link to="/">
-							<button className="btn btn-primary">Home</button>
+							<button className="boton-sign-out btn btn-primary">Home</button>
 						</Link>
 					</div>{" "}
 				</div>

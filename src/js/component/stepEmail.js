@@ -10,7 +10,7 @@ export const StepEmail = () => {
 		<>
 			<div className="container mt-5 ">
 				<div className="row d-flex justify-content-center">
-					<h1>Are you an existing customer?</h1>
+					<h3>Are you an existing customer?</h3>
 				</div>
 				<div className="row d-flex justify-content-center">
 					<div className="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">

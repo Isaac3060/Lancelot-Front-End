@@ -23,7 +23,7 @@ export const SignupView = function() {
 								width="72"
 								height="72"
 							/>
-							<h1 className="h3 mb-3 font-weight-normal">Please sign up</h1>
+							<h4 className="mb-3 font-weight-normal text-center">Enter you business information</h4>
 							<label htmlFor="businessName" className="sr-only">
 								businessName
 							</label>

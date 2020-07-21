@@ -1,4 +1,4 @@
-const lancelotBackendUrl = "https://3000-c17b7098-40fc-4b76-81ba-b2d7eadbbabb.ws-us02.gitpod.io/";
+const lancelotBackendUrl = "https://3000-c48d840e-0334-4d81-9e73-8e4135276eec.ws-us02.gitpod.io//";
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {

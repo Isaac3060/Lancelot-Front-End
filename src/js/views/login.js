@@ -20,7 +20,7 @@ export const LoginView = function() {
 								width="72"
 								height="72"
 							/>
-							<h1 className="h3 mb-3 font-weight-normal">Please log in</h1>
+							<h4 className="mb-3 font-weight-normal text-center">Enter your business information</h4>
 							<label htmlFor="inputEmail" className="sr-only">
 								Email address
 							</label>
