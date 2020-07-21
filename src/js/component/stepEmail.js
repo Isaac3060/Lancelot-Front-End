@@ -10,12 +10,12 @@ export const StepEmail = () => {
 		<>
 			<div className="container mt-5 ">
 				<div className="row d-flex justify-content-center">
-					<h3>Are you an existing customer?</h3>
+					<h4>Are you an existing customer?</h4>
 				</div>
 				<div className="row d-flex justify-content-center">
 					<div className="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
 						<form className="justify-content-center">
-							<label htmlFor="inputEmail">Email Address</label>
+							<label htmlFor="inputEmail">If so please provide your email address</label>
 							<input
 								onChange={event => setEmail(event.target.value)}
 								type="name"

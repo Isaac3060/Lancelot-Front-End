@@ -8,7 +8,7 @@ export const StepAttention = () => {
 	return (
 		<>
 			<div className="container">
-				<div className="row d-flex justify-content-center">
+				<div className="row d-flex justify-content-center mt-5">
 					<img
 						className="mx-auto"
 						src="https://www.gstatic.com/images/icons/material/system_gm/2x/report_problem_covid_red_48dp.png"
