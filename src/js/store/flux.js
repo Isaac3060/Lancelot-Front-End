@@ -87,11 +87,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 					}
 				});
 			},
-			checkVisitor: async email => {
-				const response = await fetch(`${lancelotBackendUrl}/visitor`);
+			getSingleVisitor: async email => {
+				const response = await fetch(`${lancelotBackendUrl}/visitor/${email}`);
+				if (response.status != 200) return null;
 				const data = await response.json();
-				if (response.status == 200) setStore({ visitors: data });
-				else setStore({ visitors: [] });
+				return data;
 			},
 			getTemperature: async () => {
 				const store = getStore();

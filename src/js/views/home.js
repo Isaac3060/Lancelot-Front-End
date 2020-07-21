@@ -9,7 +9,7 @@ export const Home = () => (
 		<div className="text-center mt-5">
 			<p>
 				<img
-					src={newshield}
+					src={lancelot}
 					style={{
 						width: "400px"
 					}}

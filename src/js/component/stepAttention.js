@@ -7,7 +7,7 @@ export const StepAttention = () => {
 	const history = useHistory();
 	return (
 		<>
-			<div className="container d-flex justify-content-center">
+			<div className="container d-flex justify-content-center text-center">
 				<div className=" attention">
 					<img
 						src="https://www.gstatic.com/images/icons/material/system_gm/2x/report_problem_covid_red_48dp.png"
