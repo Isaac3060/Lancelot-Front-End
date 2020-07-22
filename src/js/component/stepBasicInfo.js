@@ -6,7 +6,7 @@ export const StepBasicInfo = () => {
 	const { actions, store } = useContext(Context);
 	const [visitorFirstName, setVisitorFirstName] = useState("");
 	const [visitorLastName, setVisitorLastName] = useState("");
-	const [age, setAge] = useState("");
+	const [age, setAge] = useState(" ");
 	const [address, setAddress] = useState("");
 	const [phoneNumber, setPhoneNumber] = useState("");
 	const [email, setEmail] = useState("");
@@ -18,13 +18,45 @@ export const StepBasicInfo = () => {
 					<form>
 						<div className="form-group">
 							<label htmlFor="inputName1">First Name</label>
-							<input type="name" className="form-control" id="inputName1" placeholder />
+							<input
+								onChange={event => setVisitorFirstName(event.target.value)}
+								type="name"
+								className="form-control"
+								id="inputName1"
+								placeholder
+							/>
 							<label htmlFor="inputName2">Last Name</label>
-							<input type="name" className="form-control" id="inputName2" placeholder />
+							<input
+								onChange={event => setVisitorLastName(event.target.value)}
+								type="name"
+								className="form-control"
+								id="inputName2"
+								placeholder
+							/>
 							<label htmlFor="inputAddress">Address</label>
-							<input type="name" className="form-control" id="inputAddress" placeholder />
+							<input
+								onChange={event => setAddress(event.target.value)}
+								type="name"
+								className="form-control"
+								id="inputAddress"
+								placeholder
+							/>
+							<label htmlFor="inputEmail">Email</label>
+							<input
+								onChange={event => setEmail(event.target.value)}
+								type="name"
+								className="form-control"
+								id="inputEmail"
+								placeholder
+							/>
 							<label htmlFor="inputPhoneNumber">Phone Number</label>
-							<input type="name" className="form-control" id="inputPhoneNumber" placeholder />
+							<input
+								onChange={event => setPhoneNumber(event.target.value)}
+								type="name"
+								className="form-control"
+								id="inputPhoneNumber"
+								placeholder
+							/>
 						</div>
 						<button
 							className="btn btn-lg btn-primary btn-block"
