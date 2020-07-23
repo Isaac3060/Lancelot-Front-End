@@ -3,6 +3,7 @@ import { Context } from "../store/appContext.js";
 import { Redirect, useHistory, useParams } from "react-router-dom";
 
 export const StepAge = function() {
+	const { store, actions } = useContext(Context);
 	const history = useHistory();
 	const [ageRange, setAgeRange] = useState(null);
 
@@ -114,7 +115,18 @@ export const StepAge = function() {
 						80+
 					</label>
 				</div>
-				<button onClick={() => history.push("/questions/3")} type="button" className="btn btn-primary">
+				<button
+					onClick={async () => {
+						let success = await actions.addVisitor(ageRange);
+
+						if (success) {
+							history.push("/questions/3");
+						} else {
+							alert("something went wrong, please try again");
+						}
+					}}
+					type="button"
+					className="btn btn-primary">
 					Next
 				</button>
 			</div>

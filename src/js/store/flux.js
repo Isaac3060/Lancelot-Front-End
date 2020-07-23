@@ -6,6 +6,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 			business_id: null,
 			visitors: [],
 			visitor: [],
+			currentVisitor: {
+				first_name: "",
+				last_name: "",
+				age: "",
+				address: "",
+				phone_number: "",
+				email: ""
+			},
 			data: [
 				{ name: "18-29", positive: 10 },
 				{ name: "30-39", positive: 20 },
@@ -89,7 +97,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			getSingleVisitor: async email => {
 				const response = await fetch(`${lancelotBackendUrl}/visitor/${email}`);
-				if (response.status != 200) return null;
+				const currentStore = getStore();
+				if (response.status != 200) {
+					setStore({
+						currentVisitor: {
+							...currentStore.currentVisitor,
+							email: email
+						}
+					});
+					return null;
+				}
 				const data = await response.json();
 				return data;
 			},
@@ -119,20 +136,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 				await delay(5000);
 				return true;
 			},
-			visitor: async (first_name, last_name, age, address, phone_number, email) => {
+			addVisitor: async guckmal => {
+				const currentStore = getStore();
+				setStore({
+					currentVisitor: {
+						...currentStore.currentVisitor,
+						age: guckmal
+					}
+				});
 				const response = await fetch(`${lancelotBackendUrl}/visitor`, {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json"
 					},
-					body: JSON.stringify({
-						first_name: first_name,
-						last_name: last_name,
-						age: age,
-						address: address,
-						phone_number: phone_number,
-						email: email
-					})
+					body: JSON.stringify(currentStore.currentVisitor)
 				});
 				if (response.ok) {
 					const data = await response.json();
@@ -141,6 +158,19 @@ const getState = ({ getStore, getActions, setStore }) => {
 				} else {
 					return false;
 				}
+			},
+			visitor: async (bubu, last_name, address, phone_number, email) => {
+				const currentStore = getStore();
+				setStore({
+					currentVisitor: {
+						...currentStore.currentVisitor,
+						first_name: bubu,
+						last_name: last_name,
+						address: address,
+						phone_number: phone_number,
+						email: email
+					}
+				});
 			},
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {

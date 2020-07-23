@@ -12,7 +12,11 @@ export const TestView = function() {
 				<div className="form-min-height rounded-lg py-2 mx-auto border border-secondary mt-5">
 					{store.visit.temperature && store.visit.temperature != "" ? (
 						<>
-							{store.visit.temperature > 98 ? <Redirect to="/failure" /> : <Redirect to="/questions/7" />}
+							{store.visit.temperature > 98 ? (
+								<Redirect to="/questions/6" />
+							) : (
+								<Redirect to="/questions/7" />
+							)}
 						</>
 					) : (
 						<>

@@ -9,7 +9,7 @@ export const StepBasicInfo = () => {
 	const [age, setAge] = useState(" ");
 	const [address, setAddress] = useState("");
 	const [phoneNumber, setPhoneNumber] = useState("");
-	const [email, setEmail] = useState("");
+	const [email, setEmail] = useState(store.currentVisitor.email);
 	const history = useHistory();
 	return (
 		<div className="container d-flex flex-column h-100 justify-content-center">
@@ -47,6 +47,7 @@ export const StepBasicInfo = () => {
 								type="name"
 								className="form-control"
 								id="inputEmail"
+								value={email}
 								placeholder
 							/>
 							<label htmlFor="inputPhoneNumber">Phone Number</label>
@@ -65,16 +66,16 @@ export const StepBasicInfo = () => {
 								let success = await actions.visitor(
 									visitorFirstName,
 									visitorLastName,
-									age,
 									address,
 									phoneNumber,
 									email
 								);
-								if (success) {
-									history.push("/questions/2");
-								} else {
-									alert("something went wrong, please try again");
-								}
+								history.push("/questions/2");
+								// if (success) {
+								// 	history.push("/questions/2");
+								// } else {
+								// 	alert("something went wrong, please try again");
+								// }
 							}}>
 							Next
 						</button>
