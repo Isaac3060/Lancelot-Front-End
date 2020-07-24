@@ -1,4 +1,4 @@
-const lancelotBackendUrl = "https://3000-f885a706-2244-4bc5-b7e3-2b7012ef368b.ws-us02.gitpod.io";
+const lancelotBackendUrl = "https://3000-c48d840e-0334-4d81-9e73-8e4135276eec.ws-us02.gitpod.io";
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
@@ -38,9 +38,34 @@ const getState = ({ getStore, getActions, setStore }) => {
 			],
 			visit: {
 				temperature: ""
-			}
+			},
+			temperatureMatrix: [
+				[25, 26, 27, 28, 29, 30, 31, 32],
+				[25.5, 26.5, 27.5, 28.5, 29.5, 30.5, 31.5, 32.5],
+				[26, 27, 28, 29, 30, 31, 31, 33],
+				[26.5, 27.5, 28.5, 29.5, 30.5, 31.5, 32.5, 33.5],
+				[27, 28, 29, 30, 31, 32, 33, 34],
+				[27.5, 28.5, 29.5, 30.5, 31.5, 32.5, 33.5, 34.5],
+				[28, 29, 30, 31, 32, 33, 34, 35],
+				[28.5, 29.5, 30.5, 31.5, 32.5, 33.5, 34.5, 35.5],
+				[29, 30, 31, 32, 33, 34, 35, 36]
+			]
 		},
 		actions: {
+			setNewVisit: () => {
+				setStore({
+					visit: {}
+				});
+			},
+			setSymptoms: hasCovid => {
+				const store = getStore();
+				setStore({
+					visit: {
+						...store.visit,
+						hasCovid: hasCovid
+					}
+				});
+			},
 			signup: async (business_name, address, phone_number, email, password) => {
 				const response = await fetch(`${lancelotBackendUrl}/business`, {
 					method: "POST",
@@ -125,15 +150,24 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const delay = ms =>
 					new Promise(() =>
 						setTimeout(() => {
+							let maxTemperature = 0;
+							for (let temperatureArray of store.temperatureMatrix) {
+								for (let temperatureValue of temperatureArray) {
+									if (temperatureValue > maxTemperature) {
+										maxTemperature = temperatureValue;
+									}
+								}
+							}
+							console.log(`This is the temperature${maxTemperature}`);
 							setStore({
 								visit: {
 									...store.visit,
-									temperature: body.temperature
+									temperature: maxTemperature
 								}
 							});
 						}, ms)
 					);
-				await delay(5000);
+				await delay(1000);
 				return true;
 			},
 			addVisitor: async guckmal => {

@@ -4,6 +4,8 @@ import { Redirect, useHistory, useParams } from "react-router-dom";
 
 export const StepHealthInfo = () => {
 	const history = useHistory();
+	const { store, actions } = useContext(Context);
+
 	return (
 		<>
 			<div className=" container d-flex flex-column h-100 justify-content-center ">
@@ -42,14 +44,20 @@ export const StepHealthInfo = () => {
 
 				<div className="botones  mx-auto justify-content-around">
 					<button
-						onClick={() => history.push("/questions/5")}
+						onClick={() => {
+							actions.setSymptoms(true);
+							history.push("/questions/4");
+						}}
 						type="button"
 						className="boton-yes btn btn-primary">
 						Yes
 					</button>
 
 					<button
-						onClick={() => history.push("/questions/6")}
+						onClick={() => {
+							actions.setSymptoms(false);
+							history.push("/questions/4");
+						}}
 						type="button"
 						className="boton-no btn btn-primary">
 						No

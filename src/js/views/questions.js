@@ -14,8 +14,8 @@ const steps = {
 	0: StepEmail,
 	1: StepBasicInfo,
 	2: StepAge,
-	3: TestView,
-	4: StepHealthInfo,
+	3: StepHealthInfo,
+	4: TestView,
 	5: StepAttention,
 	6: StepFever,
 	7: StepNoFever

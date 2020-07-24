@@ -37,7 +37,9 @@ export const StepAttention = () => {
 				</ul>
 				<p className="text-center">
 					For more information on how to protect yourself and others please visit
-					{/* {"https://miro.com/app/board/o9J_kqDHfKE=/?moveToWidget=3074457348530618811&cot=1 "} */}
+					<Link to="https://miro.com/app/board/o9J_kqDHfKE=/?moveToWidget=3074457348530618811&cot=1 ">
+						This site
+					</Link>
 				</p>
 				<div className="row flex-column justify-content-between ">
 					<div className="d-flex justify-content-center">
