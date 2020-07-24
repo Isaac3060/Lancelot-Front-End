@@ -13,7 +13,7 @@ export const StepNoFever = () => {
 				<h3 className="text-center mb-3">Awesome!</h3>
 				<div className="d-flex justify-content-center">
 					<Link to="/questions/0">
-						<button className="boton-begin-test btn btn-primary ">Begin new test</button>
+						<button className="boton-begin-test btn btn-primary ">Next visitor</button>
 					</Link>
 					<Link to="/">
 						<button className="boton-sign-out-statistics btn btn-primary ml-2 ">Home</button>
