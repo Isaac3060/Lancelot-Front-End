@@ -46,6 +46,13 @@ export const StepAttention = () => {
 						</Link>
 					</div>
 					<div className="d-flex justify-content-center mt-3">
+						{/* <input
+											className="btn btn-primary btn-lg my-4"
+											type="button"
+											value="Home"
+											onClick={async () => {
+												history.push("/");
+											}} */}
 						<Link to="/">
 							<button className="boton-sign-out btn btn-primary">Home</button>
 						</Link>
