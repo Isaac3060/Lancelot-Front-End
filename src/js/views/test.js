@@ -12,7 +12,7 @@ export const TestView = function() {
 				<div className="form-min-height rounded-lg py-2 mx-auto border border-secondary mt-5">
 					{store.visit.temperature && store.visit.temperature != "" ? (
 						<>
-							{store.visit.temperature > 37 ? (
+							{store.visit.temperature > 22 ? (
 								store.visit.hasCovid ? (
 									<Redirect to="/questions/5" />
 								) : (
@@ -42,7 +42,7 @@ export const TestView = function() {
 											type="button"
 											value="Back"
 											onClick={async () => {
-												history.push("/questions/4");
+												history.push("/questions/3");
 											}}
 										/>
 									</div>
