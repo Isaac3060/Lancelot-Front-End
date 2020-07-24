@@ -8,9 +8,9 @@ export const StepNoFever = () => {
 	const { store, actions } = useContext(Context);
 	return (
 		<>
-			<div>
-				<div className="sad-smiley my-4 d-flex justify-content-center align-items-center" />
-				<h3>Awesome!</h3>
+			<div className="d-flex flex-column justify-content-center ">
+				<div className="smiley-face mt-5 mb-3" />
+				<h3 className="text-center mb-3">Awesome!</h3>
 				<div className="d-flex justify-content-center">
 					<Link to="/questions/0">
 						<button className="boton-begin-test btn btn-primary ">Begin new test</button>

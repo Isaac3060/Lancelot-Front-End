@@ -6,6 +6,9 @@ export const StepEmail = () => {
 	const history = useHistory();
 	const { store, actions } = useContext(Context);
 	const [email, setEmail] = useState("");
+	useEffect(() => {
+		actions.setNewVisit();
+	}, []);
 	return (
 		<>
 			<div className="container mt-5 ">
@@ -32,7 +35,7 @@ export const StepEmail = () => {
 							onClick={() => {
 								actions
 									.getSingleVisitor(email)
-									.then(data => (data ? history.push("/questions/3") : history.push("/questions/1")));
+									.then(data => (data ? history.push("/questions/4") : history.push("/questions/1")));
 							}}
 							type="button"
 							className="boton-email btn btn-primary btn-md">
