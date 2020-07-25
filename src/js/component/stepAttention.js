@@ -37,27 +37,30 @@ export const StepAttention = () => {
 				</ul>
 				<p className="text-center">
 					For more information on how to protect yourself and others please visit
-					<Link to="https://miro.com/app/board/o9J_kqDHfKE=/?moveToWidget=3074457348530618811&cot=1 ">
+					<Link to="https://www.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/prevention.html ">
 						This site
 					</Link>
 				</p>
 				<div className="row flex-column justify-content-between ">
 					<div className="d-flex justify-content-center">
-						<Link to="/questions/0">
-							<button className="boton-begin-test btn btn-primary ">Begin new test</button>
-						</Link>
+						<input
+							className="boton-begin-test btn btn-primary btn-lg my-4"
+							type="button"
+							value="Next visitor"
+							onClick={async () => {
+								history.push("/questions/0");
+							}}
+						/>
 					</div>
 					<div className="d-flex justify-content-center mt-3">
-						{/* <input
-											className="btn btn-primary btn-lg my-4"
-											type="button"
-											value="Home"
-											onClick={async () => {
-												history.push("/");
-											}} */}
-						<Link to="/">
-							<button className="boton-sign-out btn btn-primary">Home</button>
-						</Link>
+						<input
+							className="boton-sign-out btn btn-primary btn-lg my-4"
+							type="button"
+							value="Home"
+							onClick={async () => {
+								history.push("/");
+							}}
+						/>
 					</div>{" "}
 				</div>
 			</div>

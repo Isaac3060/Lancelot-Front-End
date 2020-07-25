@@ -16,7 +16,7 @@ export const StepFever = () => {
 				<div className="row flex-column justify-content-between ">
 					<div className="d-flex justify-content-center">
 						<Link to="/questions/0">
-							<button className="boton-begin-test btn btn-primary ">Begin new test</button>
+							<button className="boton-begin-test btn btn-primary ">Next visitor</button>
 						</Link>
 					</div>
 					<div className="d-flex justify-content-center mt-3">

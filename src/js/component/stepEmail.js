@@ -7,7 +7,7 @@ export const StepEmail = () => {
 	const { store, actions } = useContext(Context);
 	const [email, setEmail] = useState("");
 	useEffect(() => {
-		actions.setNewVisit();
+		actions.cleanVisit();
 	}, []);
 	return (
 		<>

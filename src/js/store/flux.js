@@ -1,4 +1,4 @@
-const lancelotBackendUrl = "https://3000-c48d840e-0334-4d81-9e73-8e4135276eec.ws-us02.gitpod.io";
+const lancelotBackendUrl = "https://3000-f885a706-2244-4bc5-b7e3-2b7012ef368b.ws-us02.gitpod.io/";
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
@@ -52,9 +52,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 			]
 		},
 		actions: {
-			setNewVisit: () => {
+			restoreStore: () => {
+				setStore(JSON.parse(localStorage.getItem("session")));
+			},
+			cleanVisit: () => {
 				setStore({
-					visit: {}
+					visit: null
 				});
 			},
 			setSymptoms: hasCovid => {
