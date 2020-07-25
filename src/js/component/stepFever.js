@@ -14,16 +14,17 @@ export const StepFever = () => {
 					from others is especially important for people who are at higher risk of getting very sick.
 				</p>
 				<div className="row flex-column justify-content-between ">
+					S
 					<div className="d-flex justify-content-center">
 						<Link to="/questions/0">
 							<button className="boton-begin-test btn btn-primary ">Next visitor</button>
 						</Link>
 					</div>
 					<div className="d-flex justify-content-center mt-3">
-						<Link to="/">
+						<Link to="/private">
 							<button className="boton-sign-out btn btn-primary">Home</button>
 						</Link>
-					</div>{" "}
+					</div>
 				</div>
 			</div>
 		</>

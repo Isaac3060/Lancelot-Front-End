@@ -58,7 +58,7 @@ export const StepAttention = () => {
 							type="button"
 							value="Home"
 							onClick={async () => {
-								history.push("/");
+								history.push("/private");
 							}}
 						/>
 					</div>{" "}

@@ -1,4 +1,4 @@
-const lancelotBackendUrl = "https://3000-f885a706-2244-4bc5-b7e3-2b7012ef368b.ws-us02.gitpod.io/";
+const lancelotBackendUrl = "https://3000-f885a706-2244-4bc5-b7e3-2b7012ef368b.ws-us02.gitpod.io";
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
@@ -57,7 +57,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			cleanVisit: () => {
 				setStore({
-					visit: null
+					visit: null,
+					currentVisitor: {
+						first_name: "",
+						last_name: "",
+						age: "",
+						address: "",
+						phone_number: "",
+						email: ""
+					}
 				});
 			},
 			setSymptoms: hasCovid => {
@@ -136,6 +144,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 					return null;
 				}
 				const data = await response.json();
+				setStore({
+					currentVisitor: data
+				});
 				return data;
 			},
 			getTemperature: async () => {
@@ -152,7 +163,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const body = await response.json();
 				const delay = ms =>
 					new Promise(() =>
-						setTimeout(() => {
+						setTimeout(async () => {
 							let maxTemperature = 0;
 							for (let temperatureArray of store.temperatureMatrix) {
 								for (let temperatureValue of temperatureArray) {
@@ -162,12 +173,32 @@ const getState = ({ getStore, getActions, setStore }) => {
 								}
 							}
 							console.log(`This is the temperature${maxTemperature}`);
-							setStore({
-								visit: {
-									...store.visit,
-									temperature: maxTemperature
-								}
+							let visitResponse = await fetch(`${lancelotBackendUrl}/visit`, {
+								method: "POST",
+								headers: {
+									"Content-Type": "application/json",
+									Authorization: `Bearer ${store.token}`
+								},
+								body: JSON.stringify({
+									temperature: maxTemperature,
+									visitor_id: store.currentVisitor.id,
+									entry_date: new Date().toUTCString(),
+									has_fever: store.visit.temperature > 37,
+									has_covid: store.visit.hasCovid
+								})
 							});
+							if (visitResponse.ok) {
+								let visit = await visitResponse.json();
+								setStore({
+									visit: visit
+								});
+								return true;
+							} else {
+								setStore({
+									visit: visitResponse.status
+								});
+								return false;
+							}
 						}, ms)
 					);
 				await delay(1000);
@@ -175,27 +206,29 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			addVisitor: async guckmal => {
 				const currentStore = getStore();
-				setStore({
-					currentVisitor: {
-						...currentStore.currentVisitor,
-						age: guckmal
-					}
-				});
+
 				const response = await fetch(`${lancelotBackendUrl}/visitor`, {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json"
 					},
-					body: JSON.stringify(currentStore.currentVisitor)
+					body: JSON.stringify({
+						...currentStore.currentVisitor,
+						age: guckmal
+					})
 				});
 				if (response.ok) {
 					const data = await response.json();
+					setStore({
+						currentVisitor: data
+					});
 					console.log(data);
 					return true;
 				} else {
 					return false;
 				}
 			},
+
 			visitor: async (bubu, last_name, address, phone_number, email) => {
 				const currentStore = getStore();
 				setStore({
