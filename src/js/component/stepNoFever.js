@@ -12,12 +12,22 @@ export const StepNoFever = () => {
 				<div className="smiley-face mt-5 mb-3" />
 				<h3 className="text-center mb-3">Awesome!</h3>
 				<div className="d-flex justify-content-center">
-					<Link to="/questions/0">
-						<button className="boton-begin-test btn btn-primary ">Next visitor</button>
-					</Link>
-					<Link to="/">
-						<button className="boton-sign-out-statistics btn btn-primary ml-2 ">Home</button>
-					</Link>
+					<input
+						className="boton-begin-test btn btn-primary"
+						type="button"
+						value="Next visitor"
+						onClick={async () => {
+							history.push("/questions/0");
+						}}
+					/>
+					<input
+						className="boton-sign-out-statistics btn btn-primary ml-2"
+						type="button"
+						value="Home"
+						onClick={async () => {
+							history.push("/private");
+						}}
+					/>
 				</div>
 			</div>
 		</>

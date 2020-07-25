@@ -1,12 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.scss";
 import { Context } from "../store/appContext.js";
-import { Redirect, Link } from "react-router-dom";
+import { Redirect, Link, useHistory } from "react-router-dom";
 import lancelot from "../../img/Lancelot.png";
 import smiley from "../../img/Smiley face.png";
 
 export const Private = () => {
+	const history = useHistory();
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
 	const { actions, store } = useContext(Context);
 	return (
 		<div className="text-center mt-5">
@@ -21,16 +24,33 @@ export const Private = () => {
 					}}
 				/>
 			</p>
+			{/* <div className="d-flex justify-content-center mt-3"> */}
+			<input
+				className="boton-statistics btn btn-primary btn-lg"
+				type="button"
+				value="Statistics"
+				onClick={async () => {
+					history.push("/barchart");
+				}}
+			/>
 
-			<Link to="/barchart" className="boton-statistics btn btn-primary btn-lg">
-				Statistics
-			</Link>
-			<Link to="/questions" className="boton-questions btn btn-primary btn-lg mx-3">
-				Questions
-			</Link>
-			<Link to="/test" className="boton-test btn btn-primary btn-lg">
-				Test
-			</Link>
+			<input
+				className="boton-questions btn btn-primary btn-lg mx-3"
+				type="button"
+				value="Visitor"
+				onClick={async () => {
+					history.push("/questions");
+				}}
+			/>
+
+			<input
+				className="boton-test btn btn-primary btn-lg"
+				type="button"
+				value="Log out"
+				onClick={async () => {
+					actions.login(email, password);
+				}}
+			/>
 		</div>
 	);
 };
