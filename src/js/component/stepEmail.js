@@ -34,6 +34,7 @@ export const StepEmail = () => {
 						<button
 							onClick={() => {
 								actions
+									// .emailValidation(inputText)
 									.getSingleVisitor(email)
 									.then(data => (data ? history.push("/questions/3") : history.push("/questions/1")));
 							}}
