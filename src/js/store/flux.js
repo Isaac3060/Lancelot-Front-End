@@ -1,4 +1,4 @@
-const lancelotBackendUrl = "https://3000-f885a706-2244-4bc5-b7e3-2b7012ef368b.ws-us02.gitpod.io";
+const lancelotBackendUrl = "https://lancelot2020.herokuapp.com";
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
@@ -261,6 +261,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					fetch().then().then(data => setStore({ "foo": data.bar }))
 				*/
 			},
+
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();
