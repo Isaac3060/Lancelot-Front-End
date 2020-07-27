@@ -35,6 +35,9 @@ export const Layout = () => {
 						<Route exact path="/">
 							<Home />
 						</Route>
+						<Route exact path="/home">
+							<Home />
+						</Route>
 						<Route path="/login">
 							<Navbar />
 							<LoginView />

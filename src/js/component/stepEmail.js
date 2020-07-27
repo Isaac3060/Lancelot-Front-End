@@ -33,10 +33,16 @@ export const StepEmail = () => {
 					<div className="col-2 text-center">
 						<button
 							onClick={() => {
-								actions
-									// .emailValidation(inputText)
-									.getSingleVisitor(email)
-									.then(data => (data ? history.push("/questions/3") : history.push("/questions/1")));
+								if (email == "") {
+									alert("Please enter your email");
+								} else {
+									actions
+
+										.getSingleVisitor(email)
+										.then(
+											data => (data ? history.push("/questions/3") : history.push("/questions/1"))
+										);
+								}
 							}}
 							type="button"
 							className="boton-email btn btn-primary btn-md">

@@ -6,7 +6,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			business_id: null,
 			visitors: [],
 			visitor: [],
-			// inputText: [],
+
 			currentVisitor: {
 				first_name: "",
 				last_name: "",
@@ -205,15 +205,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				await delay(1000);
 				return true;
 			},
-			// emailValidation: async inputText => {
-			// 	let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-			// 	if (inputText.value.match(mailformat)) {
-			// 		return true;
-			// 	} else {
-			// 		alert("You have entered an invalid email address!");
-			// 		return false;
-			// 	}
-			// },
+
 			addVisitor: async guckmal => {
 				const currentStore = getStore();
 
