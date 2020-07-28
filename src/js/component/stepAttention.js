@@ -36,18 +36,18 @@ export const StepAttention = () => {
 					</li>
 				</ul>
 				<p className="text-center">
-					For more information on how to protect yourself and others please visit
+					{"For more information on how to protect yourself and others please "}
 					<a
 						href="https://www.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/prevention.html "
 						target="_blank"
 						rel="noopener noreferrer">
-						This site
+						click here
 					</a>
 				</p>
 				<div className="row flex-column justify-content-between ">
 					<div className="d-flex justify-content-center">
 						<input
-							className="boton-begin-test btn btn-primary btn-lg my-4"
+							className="boton-begin-test btn btn-primary btn-lg mt-4 mb-1"
 							type="button"
 							value="Next visitor"
 							onClick={async () => {
@@ -57,7 +57,7 @@ export const StepAttention = () => {
 					</div>
 					<div className="d-flex justify-content-center mt-3">
 						<input
-							className="boton-sign-out btn btn-primary btn-lg my-4"
+							className="boton-sign-out btn btn-primary btn-lg mt-1 mb-4"
 							type="button"
 							value="Home"
 							onClick={async () => {

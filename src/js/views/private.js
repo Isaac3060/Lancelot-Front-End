@@ -14,8 +14,9 @@ export const Private = () => {
 	return (
 		<div className="text-center mt-5">
 			{!store.token ? <Redirect to="/login" /> : ""}
-			<h2>Welcome back!</h2>
-			<p>
+			<h2 className="mb-3">Welcome to Lancelot!</h2>
+			<h5>Your Covid-19 Safeguard</h5>
+			<p className="py-4">
 				<img
 					src={smiley}
 					style={{

@@ -10,7 +10,7 @@ export const Barchart = () => {
 	return (
 		<div>
 			<div className="navbar navbar-light bg-light mb-3">
-				<div className="d-flex justify-content-end">
+				<div className="d-flex justify-content-end ml-auto">
 					<Link to="/private">
 						<button className="boton-back-statistics btn btn-primary ">Back</button>
 					</Link>
