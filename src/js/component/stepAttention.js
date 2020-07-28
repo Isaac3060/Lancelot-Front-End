@@ -37,9 +37,12 @@ export const StepAttention = () => {
 				</ul>
 				<p className="text-center">
 					For more information on how to protect yourself and others please visit
-					<Link to="https://www.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/prevention.html ">
+					<a
+						href="https://www.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/prevention.html "
+						target="_blank"
+						rel="noopener noreferrer">
 						This site
-					</Link>
+					</a>
 				</p>
 				<div className="row flex-column justify-content-between ">
 					<div className="d-flex justify-content-center">

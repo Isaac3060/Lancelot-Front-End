@@ -14,9 +14,9 @@ export const TestView = function() {
 						<>
 							{store.visit.temperature > 22 ? (
 								store.visit.hasCovid ? (
-									<Redirect to="/questions/5" />
-								) : (
 									<Redirect to="/questions/6" />
+								) : (
+									<Redirect to="/questions/5" />
 								)
 							) : (
 								<Redirect to="/questions/7" />
