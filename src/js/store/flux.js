@@ -123,6 +123,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				if (response.status == 200) setStore({ data: data });
 				else setStore({ data: [] });
 			},
+
 			setAgeRange: ageRange => {
 				const currentStore = getStore();
 				setStore({
@@ -243,6 +244,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 						email: email
 					}
 				});
+			},
+			getSingleBusiness: async () => {
+				const stadistics = await fetch(`${lancelotBackendUrl}/business`);
+				const singleBusiness = await response.json();
+				if (stadistics.status == 200) setStore({ singleBusiness: singleBusiness });
+				else setStore({ singleBusiness: [] });
 			},
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
