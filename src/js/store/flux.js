@@ -1,4 +1,5 @@
-const lancelotBackendUrl = "https://lancelot2020.herokuapp.com";
+// const lancelotBackendUrl = "https://lancelot2020.herokuapp.com";
+const lancelotBackendUrl = "https://3000-f885a706-2244-4bc5-b7e3-2b7012ef368b.ws-us02.gitpod.io";
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
@@ -246,8 +247,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 				});
 			},
 			getSingleBusiness: async () => {
-				const stadistics = await fetch(`${lancelotBackendUrl}/business`);
-				const singleBusiness = await response.json();
+				const store = getStore();
+				const stadistics = await fetch(`${lancelotBackendUrl}/business/${store.businessId}`);
+				const singleBusiness = await stadistics.json();
 				if (stadistics.status == 200) setStore({ singleBusiness: singleBusiness });
 				else setStore({ singleBusiness: [] });
 			},
