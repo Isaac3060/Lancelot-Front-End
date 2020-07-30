@@ -9,16 +9,10 @@ export const StepAge = function() {
 
 	return (
 		<>
-			{/* <div class="card bg-light mb-3" style="max-width: 18rem;">
-  
-  <div class="card-body">
-    <h5 class="card-title">Light card title</h5>
-  </div>
-</div> */}
 			<div className="container pt-5 d-flex flex-column h-100 justify-content-center">
 				<h3 className="text-center mb-4">What is your age?</h3>
-				<div className="custom-control custom-radio card bg-light mb-3">
-					<div className="card-body">
+				<div className="card bg-light mb-3 p-2">
+					<div className="card-body custom-control custom-radio">
 						<input
 							onClick={e => setAgeRange(e.target.value)}
 							value="18-29"
@@ -32,8 +26,8 @@ export const StepAge = function() {
 						</label>
 					</div>
 				</div>
-				<div className="custom-control custom-radio card bg-light mb-3">
-					<div className="card-body">
+				<div className="card bg-light mb-3 p-2">
+					<div className="card-body custom-control custom-radio">
 						<input
 							onClick={e => setAgeRange(e.target.value)}
 							value="30-39"
@@ -47,8 +41,8 @@ export const StepAge = function() {
 						</label>
 					</div>
 				</div>
-				<div className="custom-control custom-radio card bg-light mb-3">
-					<div className="card-body">
+				<div className="card bg-light mb-3 p-2">
+					<div className="card-body custom-control custom-radio">
 						<input
 							onClick={e => setAgeRange(e.target.value)}
 							value="40-49"
@@ -62,8 +56,8 @@ export const StepAge = function() {
 						</label>
 					</div>
 				</div>
-				<div className="custom-control custom-radio card bg-light mb-3">
-					<div className="card-body">
+				<div className="card bg-light mb-3 p-2">
+					<div className="card-body custom-control custom-radio">
 						<input
 							onClick={e => setAgeRange(e.target.value)}
 							value="50-59"
@@ -77,8 +71,8 @@ export const StepAge = function() {
 						</label>
 					</div>
 				</div>
-				<div className="custom-control custom-radio card bg-light mb-3">
-					<div className="card-body">
+				<div className="card bg-light mb-3 p-2">
+					<div className="card-body custom-control custom-radio">
 						<input
 							onClick={e => setAgeRange(e.target.value)}
 							value="160-64"
@@ -92,8 +86,8 @@ export const StepAge = function() {
 						</label>
 					</div>
 				</div>
-				<div className="custom-control custom-radio card bg-light mb-3">
-					<div className="card-body">
+				<div className="card bg-light mb-3 p-2">
+					<div className="card-body custom-control custom-radio">
 						<input
 							onClick={e => setAgeRange(e.target.value)}
 							value="65-69"
@@ -107,8 +101,8 @@ export const StepAge = function() {
 						</label>
 					</div>
 				</div>
-				<div className="custom-control custom-radio card bg-light mb-3">
-					<div className="card-body">
+				<div className="card bg-light mb-3 p-2">
+					<div className="card-body custom-control custom-radio">
 						<input
 							onClick={e => setAgeRange(e.target.value)}
 							value="70-79"
@@ -122,8 +116,8 @@ export const StepAge = function() {
 						</label>
 					</div>
 				</div>
-				<div className="custom-control custom-radio card bg-light mb-3">
-					<div className="card-body">
+				<div className="card bg-light mb-3 p-2">
+					<div className="card-body custom-control custom-radio">
 						<input
 							onClick={e => setAgeRange(e.target.value)}
 							value="80+"

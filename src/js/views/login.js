@@ -13,13 +13,13 @@ export const LoginView = function() {
 				<div className="row justify-content-center">
 					<div className="col-4">
 						<form className="form-signin ">
-							<img
+							{/* <img
 								className="mb-4"
 								src="/docs/4.5/assets/brand/bootstrap-solid.svg"
 								alt=""
 								width="72"
 								height="72"
-							/>
+							/> */}
 							<h4 className="mb-3 font-weight-normal text-center">Enter your business information</h4>
 							<label htmlFor="inputEmail" className="sr-only">
 								Email address
