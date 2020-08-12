@@ -1,6 +1,9 @@
 # Lancelot
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io#https://github.com/4GeeksAcademy/react-hello-webapp.git)
 
+## Back-End Link
+[Lancelot-Back-End](https://github.com/Isaac3060/Lancelot-Back-End)
+
 ### Requirements:
 - Make sure you are using node version 10
 
@@ -19,6 +22,13 @@ Start the webpack server with live reload:
 ```
 `$ npm run start` for windows, mac, linux or Gitpod.
 ```
+### Technologies implemented in these project
+- Javascript
+- Python Flask
+- HTML
+- CSS
+- React.js
+- MySQL
 
 ### Styles
 You can update the `styles/index.scss` or create new `.scss` files inside `styles/` and import them into your current scss or js files depending on your needs.
