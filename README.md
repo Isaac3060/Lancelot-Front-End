@@ -22,7 +22,7 @@ Start the webpack server with live reload:
 ```
 `$ npm run start` for windows, mac, linux or Gitpod.
 ```
-### Technologies implemented in these project
+### Technologies implemented in this project
 - Javascript
 - Python Flask
 - HTML
