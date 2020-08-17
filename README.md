@@ -30,6 +30,9 @@ Start the webpack server with live reload:
 - React.js
 - MySQL
 
+### Description
+The project is based on implementing security measures to mitigate the spread of Covid-19 in small stores or shops who might a good influx of people day to day. We created a databse using MySQL to store the information of the business, the visits and the visitors to each single store. Using python we made the Back-End so that it is able to make different method to an API. We also implemented React.js, Javascripts, HTML and CSS for the Fron-End of the Application. The application will take the temperature of the person who is visiting the business using Raspberry Pi, the information will be then sent to the database to confirm whether the person might or might not have fever, once that is done, we will also ask some questions based on the CDC regulations to determine if the chances of Covid-19 of the person visiting the store are low or high. Once the process has been completed the information of the visit will be stored in a databse for the particular business in the case local health autorities neeed it. 
+
 ### Styles
 You can update the `styles/index.scss` or create new `.scss` files inside `styles/` and import them into your current scss or js files depending on your needs.
 
